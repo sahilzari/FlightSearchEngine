@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Search Engine</title>
+  <link type="text/css" rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header>
+    <h1><i class="planIc fa fa-plane">Fight Search Engine</i></h1>
+  </header>
+  <section id="bodyCotainer">
+    <div class="filterSearchFilter">
+      <aside id="flightSearch">
+        <form name="searchFlight">
+          <div class="radio-toolbar">
+            <input type="radio" id="radioOneWay" name="trip" value="One Way" checked>
+            <label for="radioOneWay">One Way</label>
+
+            <input type="radio" id="radioRoundTrip" name="trip" value="Round Trip">
+            <label for="radioRoundTrip">Round Trip</label>
+          </div>
+          <div class="sourceDesination">
+            <input type="text" id="fromPlace" placeholder="From" />
+            <ul id="source"></ul>
+            <span class="error"></span>
+          </div>
+          <div class="sourceDesination">
+            <input type="text" id="toPlace" placeholder="To" />
+            <ul id="destination"></ul>
+            <span class="error"></span>
+          </div>
+          <div id="depatureDate">
+            <input type="text" placeholder="Travel Date" onfocus="(this.type='date')" id="travelDate"
+              onchange="flight.validateEnteredDate(event)" />
+          </div>
+          <div id="returnDate">
+            <input type="text" placeholder="Return Date" onfocus="(this.type='date')" id="dateOfReturn"
+              onchange="flight.validateEnteredDate(event)" />
+          </div>
+          <div>
+            <input type="number" id="noOfTravelers" onchange="flight.validateTravelers(event)" min="1" max="8"
+              placeholder="Number of Travelers">
+          </div>
+          <div>
+            <input id="searchBtn" type="button" onclick="flight.submitValues(event)" value="Submit" />
+          </div>
+        </form>
+      </aside>
+      <!-- <div class="filterDetails">
+        <div class="slidecontainer">
+            <div style="margin-bottom: 0.7rem; font-weight: bold;">Refine flight search</div>
+            <div class="outputContainer">
+              <output id="output" style="text-align: center";>0</output>
+            </div>
+              <input type="range" id="slider" class="slider" value="0" min="0" max="10000" step="500">
+        </div> -->
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Flight Search From Ends -->
+    <!-- Flight List From Starts -->
+    <div id="FlightResult">
+      <div class="beforeSearch"><i class="fa fa-fighter-jet" aria-hidden="true"></i>Please Make Fight Search</div>
+      <div class="flightOnward flightResultWrapper">
+        <div class="flightResultHeader">
+          <div class="headerStartingDate">
+            <h4 class="headStartLoc"></h4>
+          </div>
+          <div>
+            <h4>></h4>
+          </div>
+          <div class="headerStartingDate">
+            <h4 class="headEndLoc"></h4>
+          </div>
+          <div>
+            <h4 class="headEndLocRet">></h4>
+          </div>
+          <div class="headeReturnDate">
+            <div>
+              <h4 class="headEndLocReturn"></h4>
+            </div>
+          </div>
+          <div class="dates">
+            <div>
+              <span>Start Date : <span class="strtDate"></span></span>
+            </div>
+            <div>
+              <span>End Date : <span class="endDate"></span></span>
+            </div>
+          </div>
+        </div>
+        <div id="resultContainer"></div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>

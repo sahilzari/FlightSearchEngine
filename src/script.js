@@ -1,464 +1,521 @@
-/* Airport JSON list */
-const airportSearch = [
-  {
-    location: "Chennai (MAA)",
-    keyword: ["Chennai", "MAA", "Chennai (MAA)"]
-  },
-  {
-    location: "Delhi (DEL)",
-    keyword: ["Delhi", "DEL", "Delhi (DEL)"]
-  },
-  {
-    location: "Coimbatore (CJB)",
-    keyword: ["Coimbatore", "CJB", "Coimbatore (CJB)"]
-  },
-  {
-    location: "Mumbai (BOM)",
-    keyword: ["Mumbai", "BOM", "Mumbai (BOM)"]
-  },
-  {
-    location: "Nagpur (NAG)",
-    keyword: ["Nagpur", "NAG", "Nagpur (NAG)"]
-  },
-  {
-    location: "Nanded (NDC)",
-    keyword: ["Nanded", "NDC", "Nanded (NDC)"]
-  },
-  {
-    location: "Aurangabad  (IXU)",
-    keyword: ["Aurangabad ", "IXU", "Aurangabad  (IXU)"]
-  },
-  {
-    location: "Kolhapur  (KLH)",
-    keyword: ["Kolhapur ", "KLH", "Kolhapur  (KLH)"]
-  },
-  {
-    location: "Tiruchirapally (TRZ)",
-    keyword: ["Tiruchirapally", "Trichy", "TRZ", "Tiruchirapally (TRZ)"]
-  },
-  {
-    location: "Madurai (IXM)",
-    keyword: ["Madurai", "IXM", "Madurai (IXM)"]
-  },
-  {
-    location: "Pune (PNQ)",
-    keyword: ["Pune", "PNQ", "Pune (PNQ)"]
-  }
-];
+const data = [
+    // Date:25/02/2021
+    {
+        price: 2500,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '10.15 am',
+        arrivalTime: '11.45 am',
+        code: 'TY-6239',
 
-/* Airlines Array list */
-const airlines = ["SpiceJet", "AirFrance", "Indigo", "Luftansa", "Air India", "GoAir"];
+        from: {
+            city: 'Delhi',
+            short: 'DEL',
+        },
+        to: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+    },
+    {
+        price: 8500,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '12.20 pm',
+        arrivalTime: '1.45 pm',
+        code: 'TY-6239',
 
-/* Flight & Airport Data */
-let SearchFlight = function() {
-  this.tripType = document.searchFlight.radioOneWay.checked ? "One Way" : "Round Trip";
-  this.searchResult = [];
-  this.formData = {};
-  /* Form input Dats */
-  this.getFormData = function() {
-    this.formData = {
-      fromPlace: document.searchFlight.fromPlace.value,
-      toPlace: document.searchFlight.toPlace.value,
-      travelDate: document.searchFlight.travelDate.value,
-      dateOfReturn: document.searchFlight.dateOfReturn.value,
-      noOfTravelers: document.searchFlight.noOfTravelers.value,
+        from: {
+            city: 'Delhi',
+            short: 'DEL',
+        },
+        to: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+    },
+    {
+        price: 5500,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '4.20 pm',
+        arrivalTime: '6.35 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+        to: {
+            city: 'Delhi',
+            short: 'DEL',
+        },
+    },
+    {
+        price: 3800,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '7.05 pm',
+        arrivalTime: '8.25 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+        to: {
+            city: 'Delhi',
+            short: 'DEL',
+        },
+    },
+    {
+        price: 7300,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '5.05 pm',
+        arrivalTime: '6.25 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+        to: {
+            city: 'Bangalore',
+            short: 'BLR',
+        },
+    },
+    {
+        price: 2400,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '9.05 am',
+        arrivalTime: '10.25 am',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+        to: {
+            city: 'Bangalore',
+            short: 'BLR',
+        },
+    },
+    {
+        price: 2900,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '9.50 am',
+        arrivalTime: '11.25 am',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Bangalore',
+            short: 'BLR',
+        },
+        to: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+    },
+    {
+        price: 3500,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '11.23 am',
+        arrivalTime: '12.25 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+        to: {
+            city: 'Hyderabad',
+            short: 'HYD',
+        },
+    },
+    {
+        price: 4500,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '1.25 pm',
+        arrivalTime: '2.45 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+        to: {
+            city: 'Hyderabad',
+            short: 'HYD',
+        },
+    },
+    {
+        price: 3300,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '1.55 pm',
+        arrivalTime: '3.10 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Hyderabad',
+            short: 'HYD',
+        },
+        to: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+    },
+    {
+        price: 3400,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '4.05 pm',
+        arrivalTime: '5.45 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Hyderabad',
+            short: 'HYD',
+        },
+        to: {
+            city: 'Mumbai',
+            short: 'BOM',
+        },
+    },
+    {
+        price: 5100,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '1.23 pm',
+        arrivalTime: '3.45 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Delhi',
+            short: 'DEl',
+        },
+        to: {
+            city: 'Bangalore',
+            short: 'BLR',
+        },
+    },
+    {
+        price: 3500,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '2.33 pm',
+        arrivalTime: '3.27 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Delhi',
+            short: 'DEl',
+        },
+        to: {
+            city: 'Bangalore',
+            short: 'BLR',
+        },
+    },
+    {
+        price: 9500,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '4.19 pm',
+        arrivalTime: '5.50 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Bangalore',
+            short: 'BLR',
+        },
+        to: {
+            city: 'Delhi',
+            short: 'DEL',
+        },
+    },
+    {
+        price: 1500,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '7.33 am',
+        arrivalTime: '8.57 am',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Bangalore',
+            short: 'BLR',
+        },
+        to: {
+            city: 'Delhi',
+            short: 'DEL',
+        },
+    },
+    {
+        price: 6540,
+        depart: '2022-12-17',
+        arrival: '2022-12-17',
+        departTime: '9.14 am',
+        arrivalTime: '10.45 am',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Delhi',
+            short: 'DEL',
+        },
+        to: {
+            city: 'Hyderabad',
+            short: 'HYD',
+        },
+    },
+    {
+        price: 8943,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '11.00 am',
+        arrivalTime: '12.30 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Hyderabad',
+            short: 'HYD',
+        },
+        to: {
+            city: 'Delhi',
+            short: 'DEL',
+        },
+    },
+    {
+        price: 4578,
+        depart: '2022-12-16',
+        arrival: '2022-12-16',
+        departTime: '12.45 pm',
+        arrivalTime: '1.50 pm',
+        code: 'TY-6239',
+
+        from: {
+            city: 'Hyderabad',
+            short: 'HYD',
+        },
+        to: {
+            city: 'Delhi',
+            short: 'DEL',
+        },
     }
-  };
-  /* One Way & Round Trip Check */
-  this.showHideRoundTrip = function() {
-    for(var i = 0; i < document.searchFlight.trip.length; i++) {
-      document.searchFlight.trip[i].addEventListener("click", () => {
-        if(!document.searchFlight.radioOneWay.checked) {
-          document.getElementById("returnDate").style.display = "block";  
-          this.tripType = "Round Trip";
+]
+
+
+
+/* The Start of all function */
+let SearchFlight = function () {
+
+    //Constructor cotext
+    this.tripType = document.searchFlight.radioOneWay.checked ? "One Way" : "Round Trip";
+    this.formData = {};
+
+    /* Form input Dats */
+    this.getFormData = function () {
+        this.formData = {
+            fromPlace: document.searchFlight.fromPlace.value,
+            toPlace: document.searchFlight.toPlace.value,
+            travelDate: document.searchFlight.travelDate.value,
+            dateOfReturn: document.searchFlight.dateOfReturn.value,
+            noOfTravelers: document.searchFlight.noOfTravelers.value,
+        }
+    };
+
+    /* One Way & Round Trip Check */
+    this.showHideRoundTrip = function () {
+        for (var i = 0; i < document.searchFlight.trip.length; i++) {
+            document.searchFlight.trip[i].addEventListener("click", () => {
+                if (!document.searchFlight.radioOneWay.checked) {
+                    document.getElementById("returnDate").style.display = "block";
+                    this.tripType = "Round Trip";
+                }
+                else {
+                    document.getElementById("returnDate").style.display = "none";
+                    this.tripType = "One Way";
+                }
+            })
+        }
+    };
+
+    /* Validate Travel Date Check */
+    this.validateEnteredDate = function (event) {
+        let selectedDate = new Date(event.target.value);
+        let now = new Date();
+        if (selectedDate <= now) {
+            alert("Date must be in the future");
+            event.target.value = "";
+        }
+    };
+    /* Validate Number of Travelers */
+    this.validateTravelers = function (event) {
+        let selectedTravelers = event.target.value;
+        if (selectedTravelers > 8) {
+            alert("Please Enter Below 8 Travelers");
+            event.target.value = "";
+        }
+    };
+
+    /* Validting Form after Submit Button */
+    this.submitValues = ((event) => {
+        this.getFormData();
+        //Array Distruction
+        const { fromPlace, toPlace, travelDate, dateOfReturn, noOfTravelers } = this.formData;
+        const { tripType } = this;
+        if (fromPlace !== "" && toPlace !== "" && travelDate !== "" && noOfTravelers !== "") {
+            if (tripType === "Round Trip" && dateOfReturn === "") {
+                alert("Fields can not be empty");
+                return false;
+            }
+            if (fromPlace === toPlace) {
+                alert("From and To place cannot be same");
+                return false;
+            }
+            if (tripType === "Round Trip" && dateOfReturn < travelDate) {
+                alert("Return Date must not less then One Way");
+                return false;
+            }
+            if (noOfTravelers <= 0) {
+                alert("Please Choose Minimum 1 Passenger");
+                return false;
+            }
+            this.displayResult(tripType,this.formData);           
         }
         else {
-          document.getElementById("returnDate").style.display = "none";
-          this.tripType = "One Way";
-        }
-      })
-    }
-  };
-  /* Rendering Airport Result */
-  this.renderResult = function(element) {
-    let getChildNode = element.parentNode.childNodes;
-    let appendList = this.searchResult.map((k,i) => {
-      if(this.searchResult.length > 0) {
-        let list = document.createElement("li");
-        list.innerHTML = k;
-        return list; 
-      }
-    });
-    for(let i = 0; i < getChildNode.length; i++) {
-      if(getChildNode[i].tagName === "UL") {
-        getChildNode[i].style.display = "block";
-        getChildNode[i].innerHTML = "";
-        for(let j = 0; j < appendList.length; j++) {
-          getChildNode[i].appendChild(appendList[j]);
+            alert("Fields can not be empty");
+
         }
 
-        function getEventTarget(e) {
-          e = e || window.event;
-          return e.target || e.srcElement; 
-        }
-        getChildNode[i].onclick = function(event) {
-          let target = getEventTarget(event);
-          element.value = target.innerHTML;
-          getChildNode[i].innerHTML = "";
-          getChildNode[i].style.display = "none";
+    });
+
+    
+    this.displayResult = function (selectedTripType, formData) {
+        const { fromPlace, toPlace, travelDate, dateOfReturn, noOfTravelers } = this.formData;
+        let displayData = {
+            beforeSearch: document.getElementsByClassName("beforeSearch")[0],
+            flightOnward: document.getElementsByClassName("flightOnward")[0]
         };
-      }
-    };
-  };
-  /* Airport Filtered Values */
-  this.airportAutoSuggestion = function(event) {
-    let enteredInput = event.target.value;
-    let keywordFilter = [];
-    let uniqueArray = [];
-    let autoSuggestionResult = airportSearch.filter(function(k,i){
-      k.keyword.filter(function(place,index){
-        let changeJSONCase = place.toLowerCase();
-        let changeInputCase = enteredInput.toLowerCase();
-        if(changeJSONCase.indexOf(changeInputCase) > -1) {
-          return keywordFilter.push(k.location);
+        const { beforeSearch, flightOnward, flightReturn } = displayData;
+        const { tripType, changeValues } = this;
+
+        if (tripType === "One Way") {
+
+            let result = data.filter(function (dt) {
+
+                return dt.from.city.toLowerCase() == fromPlace.toLowerCase()   &&
+                    dt.to.city.toLowerCase() == toPlace.toLowerCase()   &&
+                    dt.depart == travelDate || 
+                    dt.from.short.toLowerCase() == fromPlace.toLowerCase()   &&
+                    dt.to.short.toLowerCase() == toPlace.toLowerCase()   &&
+                    dt.depart == travelDate
+            });
+            console.log(result);
+
+            result.forEach(res => res.price *= noOfTravelers);
+            
+            console.log(result);
+            beforeSearch.style.display = "none";
+            flightOnward.style.display = "block";
+            changeValues(tripType, ".flightOnward", ".headStartLoc", ".headStartDate", ".headEndLoc", ".headEndDate", ".headEndLocRet", ".headStartLocReturn", ".strtDate", ".endDate", result);
         }
-      });
-      for(var value of keywordFilter){
-        if(uniqueArray.indexOf(value) === -1){
-          uniqueArray.push(value);
+        if (tripType === "Round Trip") {
+            let result = data.filter(function (dt) {
+                return dt.from.city.toLowerCase() == fromPlace.toLowerCase()   &&
+                    dt.to.city.toLowerCase() == toPlace.toLowerCase()   &&
+                    dt.depart == travelDate || 
+                    dt.from.short.toLowerCase() == fromPlace.toLowerCase()   &&
+                    dt.to.short.toLowerCase() == toPlace.toLowerCase()   &&
+                    dt.depart == travelDate
+            });
+            
+            resultReturn = data.filter(function (dt) {
+                return dt.from.city.toLowerCase() ==  toPlace.toLowerCase()  &&
+                    dt.to.city.toLowerCase() == fromPlace.toLowerCase()   &&
+                    dt.depart == dateOfReturn ||   
+                    dt.from.short.toLowerCase() ==  toPlace.toLowerCase()  &&
+                    dt.to.short.toLowerCase() == fromPlace.toLowerCase()   &&
+                    dt.depart == dateOfReturn
+            });
+
+            result = result.concat(resultReturn)
+            console.log(result);
+
+            beforeSearch.style.display = "none";
+            flightOnward.style.display = "block";
+            changeValues(tripType, "flightOnward", ".headStartLoc", ".headStartDate", ".headEndLoc", ".headEndDate", ".headEndLocRet", ".headEndLocReturn", ".strtDate", ".endDate", result);
+
         }
-      }
-      return uniqueArray;
-    });
-    this.searchResult = event.target.value != "" ? uniqueArray : [];
-    if(this.searchResult == "") {
-      console.log("Match not found.. Please Enter correct Value");
+        const container = document.getElementById('resultContainer');     
     }
-    this.renderResult(event.target);
-  };
-  /* Validate Travel Date Check */
-  this.validateEnteredDate = function(event) {
-    let selectedDate = new Date(event.target.value);
-    let now = new Date();
-    if (selectedDate <= now) {
-      alert("Date must be in the future");
-      event.target.value = "";
-    }
-  };
-  /* Validate Number of Travelers */
-  this.validateTravelers = function(event) {
-    let selectedTravelers = event.target.value;
-    if(selectedTravelers > 8) {
-      alert("Please Enter Below 8 Travelers");
-      event.target.value = "";
-    }
-  };
-  /* Validting Form after Submit Button */
-  this.submitValues = ((event) => {
-    this.getFormData();
-    const {fromPlace, toPlace, travelDate, dateOfReturn, noOfTravelers} = this.formData;
-    const {tripType} = this;
-    if(fromPlace !== "" && toPlace !== "" && travelDate !== "" && noOfTravelers !== "") {
-      if(tripType === "Round Trip" && dateOfReturn === "") {
-        alert("Fields can not be empty");
-        return false;
-      }
-      if(fromPlace === toPlace) {
-        alert("From and To place cannot be same");
-        return false;
-      }
-      if(tripType === "Round Trip" && dateOfReturn < travelDate) {
-        alert("Return Date must not less then One Way");
-        return false;
-      }
-      if(noOfTravelers <= 0 ) {
-        alert("Please Choose Minimum 1 Passenger");
-        return false;
-      }
-      //alert("Form filled");
-      this.displayValues();
-      AirlineDisplay.call(this);
-      this.airlinesList();
-      let inputArrayCont = [
-          {headText: "Flight Name", sorting: false},
-          {headText: "Departure", sorting: false},
-          {headText: "Arrival", sorting: false},
-          {headText: "Fare", sorting: true}
-      ];
-      let oneWayTable = new CreateTable("table",inputArrayCont,this.tableContent,"showFilter", 0, "One Way");
-      oneWayTable.renderTable();
-      oneWayTable.filterRow(0);
-      oneWayTable.filter();
-      if(tripType === "One Way") {
-        document.getElementById("showFilterRoundTrip").style.display = "none";
-      }
-      if(tripType === "Round Trip") {
-        this.airlinesList();
-        let roundTrip = new CreateTable("table1",inputArrayCont,this.tableContent,"showFilterRoundTrip", 0, "Round Trip");
-        roundTrip.renderTable();
-        roundTrip.filterRow(0);
-        roundTrip.filter();
-         document.getElementById("showFilterRoundTrip").style.display = "block";
-      }
-    }
-    else {
-      alert("Fields can not be empty");
-    }
-  });
-  /* Displaying Head Values */
-  this.displayValues = function() {
-    let displayData = {
-      beforeSearch: document.getElementsByClassName("beforeSearch")[0],
-      flightOnward: document.getElementsByClassName("flightOnward")[0],
-      flightReturn: document.getElementsByClassName("flightReturn")[0] 
-    };
-    const {beforeSearch, flightOnward, flightReturn} = displayData;
-    const {tripType, changeValues} = this;
-    if(tripType === "One Way") {
-      beforeSearch.style.display = "none";
-      flightOnward.style.display = "block";
-      flightReturn.style.display = "none";
-      changeValues("flightOnward",".headStartLoc",".headStartDate",".headEndLoc",".headEndDate");
-    }  
-    if(tripType === "Round Trip") { 
-      beforeSearch.style.display = "none";
-      flightOnward.style.display = "block";
 
-      changeValues("flightOnward",".headStartLoc",".headStartDate",".headEndLoc",".headEndDate");
-      flightReturn.style.display = "block";
-      changeValues("flightReturn",".returnStartLoc",".returnStartDate",".returnEndLoc",".returnEndDate");
-    }
-  };
-  /* Appeding the Renderd Head Values */
-  this.changeValues = ((selectedTripType, startLoc, startDate, endLoc, endDate) => {
-    this.getFormData();
-    const {fromPlace, toPlace, travelDate, dateOfReturn, noOfTravelers} = this.formData;
-    let getTripType = document.getElementsByClassName(selectedTripType);
-    let getStaringPlace = getTripType[0].querySelector(startLoc);
-    let getStartDate = getTripType[0].querySelector(startDate);
-    let getEndPlace = getTripType[0].querySelector(endLoc);
-    let getEndDate = getTripType[0].querySelector(endDate);
+    /* Appeding the Renderd Head Values & result in Card */
+    this.changeValues = ((tripType, selectedTripType, startLoc, startDate, endLoc, endDate, endLocRet, endLocReturn, strDate, ecdDate, result) => {
+        this.getFormData();
+        const { fromPlace, toPlace, travelDate, dateOfReturn, noOfTravelers } = this.formData;
+        let getTripType = document.getElementsByClassName("flightResultHeader");
+        let getStaringPlace = getTripType[0].querySelector(startLoc);
+        let headEndLocRet = getTripType[0].querySelector(endLocRet);
+        let getEndPlace = getTripType[0].querySelector(endLoc);
+        let getEndPlaceReturn = getTripType[0].querySelector(endLocReturn);
+        let getstrDate = getTripType[0].querySelector(strDate);
+        let getendDate = getTripType[0].querySelector(ecdDate);
 
-    if(selectedTripType === "flightOnward") {
-      getStaringPlace.innerHTML = fromPlace;
-      getStartDate.innerHTML = travelDate;
-      getEndPlace.innerHTML = toPlace;
-      getEndDate.innerHTML = travelDate;
-    }
-    if(selectedTripType === "flightReturn") {
-      getStaringPlace.innerHTML = toPlace;
-      getStartDate.innerHTML = dateOfReturn;
-      getEndPlace.innerHTML = fromPlace;
-      getEndDate.innerHTML = dateOfReturn;
-    }
-  });
-};
-
-/* Airline Details Listing */
-let AirlineDisplay = function() {
-  this.airlinesResult = {};
-  this.getRandomArbitrary = function (min, max, separator = ".", round = false) {
-    let getRandomNumber = (Math.random() * (max - min + 1)) + min;
-    let value = getRandomNumber.toFixed(2);
-    value = value % 1 < 0.60 ? value : Math.floor(getRandomNumber).toFixed(2);
-    //value = round ? Math.round(value) : value;
-    let replace = value.replace(".", separator);
-    return replace;
-  }
-  this.airlinesList = (() =>{
-    //const {airlinesResult, getRandomArbitrary} = this;
-    let airlinesList = [];
-    this.airlinesResult = {
-      flightName: "",
-      departureTime: "",
-      arrivalTime: "",
-      price: ""
-    };
-    var rand = Math.floor(Math.random() * airlines.length);
-    if(rand === 0) { rand += 1}
-    this.tableContent = [];
-    for(i=0; i<= rand; i++){
-      let rowContent = [];
-      this.airlinesResult = {
-        flightName: airlines[i],
-        departureTime: this.getRandomArbitrary(0,24,":"),
-        arrivalTime: this.getRandomArbitrary(0,24,":"),
-        price: Math.round(this.getRandomArbitrary(1000,6000) * this.formData.noOfTravelers)
-      }
-      rowContent.push(airlines[i]);
-      rowContent.push(this.airlinesResult.departureTime);
-      rowContent.push(this.airlinesResult.arrivalTime);
-      rowContent.push(this.airlinesResult.price);
-      rowContent.push("<input type='button' class='bookTicBtn' value='Book Now' />");
-      this.tableContent.push(rowContent)
-    }
-  });
-}
-
-/* Creating Table with Sorting and Filter */
-let CreateTable = function(id,thead,tbody,filterId,filterBy,tripType) {
-  this.getParentId = document.getElementById(id);
-  this.getFilterId = document.getElementById(filterId);
-  this.theadContent = thead;
-  this.tbodyContent = tbody;
-  this.ascendingSort = true;
-  this.filteredValue = [];
-  this.filterByRow = [];
-  let previousFilterCheck;
-  this.filterRow = function(index) {
-    const {tbodyContent} = this;
-    let filter = tbodyContent.map((k, i) => {
-      let innerArr = k.filter((j, l) => {
-        if(index === l) {
-          this.filteredValue.push(j)
-          return j
+        // let getEndDate = getTripType[0].querySelector(endDate);
+        if (tripType === "One Way") {
+            getStaringPlace.innerHTML = fromPlace;
+            getstrDate.innerHTML = travelDate;
+            getendDate.innerHTML = travelDate;
+            getEndPlace.innerHTML = toPlace;
+            headEndLocRet.style.display = 'none';
         }
-      })
-      return innerArr;
-    });
-  };
-  /* Creating Table */
-  this.renderTable = (() => {
-    const {getParentId, theadContent, tbodyContent} = this;
-    getParentId.innerHTML = "";
-    let table = document.createElement("TABLE");
-    getParentId.appendChild(table);
-    let tableHead = document.createElement("THEAD");
-    table.appendChild(tableHead);
-    let rowHead = document.createElement("TR");
-    tableHead.appendChild(rowHead);
-    let tableBody = document.createElement("TBODY");
-    table.appendChild(tableBody);
-    for(let i=0; i< theadContent.length; i++) {
-      let content = document.createElement("TH");
-      if(theadContent[i].sorting) {
-        let icon = document.createElement("I");
-        icon.className = "fa fa-long-arrow-up";
-        let textNode = document.createTextNode(theadContent[i].headText);
-        content.appendChild(textNode);
-        content.appendChild(icon);
-        content.addEventListener("click", () => {
-          this.sorting(i);
+        if (tripType === "Round Trip") {
+            getStaringPlace.innerHTML = fromPlace;            
+            getEndPlace.innerHTML = toPlace;
+            getEndPlaceReturn.innerHTML = fromPlace;
+            headEndLocRet.style.display = 'block';
+            getstrDate.innerHTML = travelDate;
+            getendDate.innerHTML = dateOfReturn;
+           
+        }
+        const container = document.getElementById('resultContainer');
+        container.innerHTML = ``;
+        if (result.length === 0){
+            container.innerHTML = `
+                                    <h3>Flights not found!</h3>`;
+        }
+        result.forEach((res) => {
+            // Create card element
+            const card = document.createElement('div');
+            card.classList = 'card-body';
+
+            // Construct card content
+            const content = `
+                                <div class="card" style="margin-bottom: 0.8rem;">
+                                    <h3>RS. ${res.price}</h3>
+                                    <div class="card-body">
+                                    <div>
+                                    <p id > ${res.from.short} > ${res.to.short}<p>
+                                    </div>
+                                    <h6>${res.code}</h6>
+                                    <h5>Arrival     : ${res.departTime}</h5>
+                                    <h5>Ddeparture  : ${res.arrivalTime}</h5>   
+                                    <input  type="button" class="bookTicBtn" value="Book Now" >
+                                                               
+                                </div> 
+                                `;
+
+            // Append newyly created card element to the container
+            container.innerHTML += content;
         })
-      }
-      else {
-        content.innerHTML = theadContent[i].headText; 
-      }
-      rowHead.appendChild(content);
-    }
-    let appendTrow = tbodyContent.map((k,i) => {
-      let tr = document.createElement("tr");
-      let appendTd = k.map((j,l) => {
-        let td = document.createElement("td");
-        td.innerHTML = j;
-        return td;
-      });
-      for(let i = 0; i < appendTd.length; i++) {
-        tr.appendChild(appendTd[i]); 
-      }
-      return tr;
+
     });
-    for(let i=0; i<appendTrow.length; i++) {
-      tableBody.appendChild(appendTrow[i]); 
-    }
-  });
-  /* Filter Table */
-  this.filter = function() {
-    const {filteredValue} = this;
-    this.getFilterId.innerHTML = "";
-    let filterTitle = document.createElement("H4");
-    filterTitle.innerHTML = tripType;
-    this.getFilterId.appendChild(filterTitle);
-    let filterList = filteredValue.map((k,i) => {
-      let createList = document.createElement("LI");
-      let filterCheckbox = document.createElement("INPUT");
-      filterCheckbox.setAttribute("type", "checkbox");
-      filterCheckbox.onclick = this.refineTable;
-      filterCheckbox.className = "styled-checkbox";
-      filterCheckbox.value = k;
-      filterCheckbox.id = k+i + "_" + this.getFilterId.id;
-      let filterLabel = document.createElement("LABEL");
-      filterLabel.setAttribute("for", k+i + "_" + this.getFilterId.id);
-      filterLabel.innerHTML = k;
-      createList.appendChild(filterCheckbox);
-      createList.appendChild(filterLabel);
-      return createList;
-    });
-    let renderList = document.createElement("UL");
-    let filterByValue = [];
-    for(let i=0; i< filterList.length; i++) {
-      renderList.appendChild(filterList[i]);
-    }
-    this.getFilterId.appendChild(renderList);
-  }
-  this.refineTable = ((e) => {
-    let targetElement = e.target;
-    if(targetElement.checked) {
-     this.filterByRow.push(e.target.value); 
-    }
-    else {
-      var index = this.filterByRow.indexOf(e.target.value);
-      if (index > -1) {
-         this.filterByRow.splice(index, 1);
-      }
-    }
-    if(this.filterByRow.length > 0) {
-      let rearrangeArray = [];
-      let {tbodyContent} = this;
-      for(let i = 0; i<this.filterByRow.length; i++) {
-        for(let j = 0; j<tbody.length; j++) {
-          for(let k = 0; k<tbody[j].length; k++) {
-            if(this.filterByRow[i] === tbody[j][k]) {
-              rearrangeArray.push(tbody[j])
-            }
-          }
-        }
-      }
-      this.tbodyContent = rearrangeArray;
-    }
-    else {
-      this.tbodyContent = tbody;
-    }
-    this.renderTable();
-  });
-  /* Table Sorting */
-  this.sorting = ((index) => {
-    let {tbodyContent} = this;
-    let getSortedValue = [];
-    let getSortOrder = tbodyContent.map((k,i) => {
-      let findIndex = k.filter((j,l) => {
-        if(index === l) {
-          getSortedValue.push(j);
-          return j;
-        };
-      });
-      return findIndex;
-    });
-    if(this.ascendingSort) {
-      getSortedValue.sort(function(a, b) {
-        return a - b;
-      });
-      this.ascendingSort = false;
-    }
-    else {
-      getSortedValue.sort(function(a, b) {
-        return b - a;
-      });
-      this.ascendingSort = true;
-    }
-    let rearrangeArray = [];
-    for(let i = 0; i<getSortedValue.length; i++) {
-      for(let j = 0; j<tbodyContent.length; j++) {
-        for(let k = 0; k<tbodyContent[j].length; k++) {
-          if(getSortedValue[i] === tbodyContent[j][k]) {
-            rearrangeArray.push(tbodyContent[j])
-          }
-        }
-      }
-    }
-    this.tbodyContent = rearrangeArray;
-    this.renderTable();
-  })
+   
 }
 
 let flight = new SearchFlight();

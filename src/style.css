@@ -201,7 +201,7 @@ header .planIc {
   display: none;
 }
 #FlightResult table {
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
   text-align: left;
   width: 100%;
   table-layout: fixed;
@@ -225,7 +225,7 @@ header .planIc {
 }
 #FlightResult table tbody tr {
   background: #f7f7f7;
-  border-bottom: 5px solid #fff;
+  border-bottom: 5px solid rgb(19, 18, 18);
 }
 #FlightResult table tbody tr td {
   color: #333;
@@ -241,7 +241,17 @@ header .planIc {
 }
 #FlightResult table tbody tr td .bookTicBtn {
   font-size: 10px;
+  /* justify-content: right; */
+  float:right
+
 }
+.bookTicBtn {
+  font-size: 10px;
+  justify-content: right;
+  float:right
+
+}
+
 .beforeSearch {
   background: #fff;
   color: #555;
@@ -370,4 +380,40 @@ header .planIc {
   .beforeSearch i {
     font-size: 30px;
   }
+  
+  
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    margin-bottom: 0.7rem;
+    padding: 0.25rem;
+}
+
+#outputContainer {
+ 
+  display: flex;
+  justify-content: center;
+}
+
+.output {
+  display: block;
+  text-align: center;
+	font-size: 178px;
+	font-family: sans-serif;
+	font-weight: 600;
+	margin: 0 0 2rem 0;
+	line-height: 1;
+}
+
+.rangeslider__fill {
+  background: rgb(87, 161, 223);
+  backface-visibility: visible;
+}
 }
